@@ -3,10 +3,14 @@
 USR=`cat http_user.txt`
 PWD=`cat http_passwd.txt`
 KEY=`cat api_access_key.txt`
+
+logger -t $0 start.
+
 exec ruby -S -x "$0" "${USR}" "${PWD}" "${KEY}" "$@"
 
 #! ruby
 # -*- coding: utf-8 -*-
+require 'syslog'
 require './daily_ticket_generator'
 
 t = Daily_Ticket_Generator.new
@@ -16,5 +20,14 @@ t.api_key  = ARGV[2]
 t.pj_uri   = 'https://secure.ex.root-node.net/redmine/projects/takumim-project/'
 t.setup_file = 'setup.xml' 
 
-t.daily_check
+Syslog.open($0)
+begin
+    t.daily_check
+
+    Syslog.log(Syslog::LOG_INFO, "finished.") 
+rescue => e
+    Syslog.log(Syslog::LOG_INFO, "failed." + e.message)
+ensure
+    Syslog.close
+end
 
