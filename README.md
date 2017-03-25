@@ -39,8 +39,7 @@ It can only work for single project and single user.
 
   2. see setup.xml.sample and edit setup.xml
 
-     You need project id, tracker id, priority id,
-     author id and assgned_to id  from setup.xml.
+     You need project id, author id and assgned_to id  from setup.xml.
 
      You set subject and description as you like.
 

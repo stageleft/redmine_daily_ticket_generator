@@ -2,8 +2,6 @@
 <issues>
   <issue>
     <project id="set-your-project-id"/>
-    <tracker id="set-tracker-id-of-this-ticket"/>
-    <priority id="set-priority-of-this-ticket"/>
     <author id="set-your-user-num"/>
     <assigned_to id="set-your-user-num"/>
     <subject>Set-Subject-Of-Daily-Ticket</subject>
