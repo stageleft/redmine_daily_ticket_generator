@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues>
+  <issue>
+    <project id="set-your-project-id"/>
+    <tracker id="set-tracker-id-of-this-ticket"/>
+    <priority id="set-priority-of-this-ticket"/>
+    <author id="set-your-user-num"/>
+    <assigned_to id="set-your-user-num"/>
+    <subject>Set-Subject-Of-Daily-Ticket</subject>
+    <description>Set-Description-of-this-Ticket</description>
+    <start_date>set-datestr-of-start-date</start_date>
+    <due_date>set-datestr-of-due-date</due_date>
+  </issue>
+</issues>
