@@ -16,6 +16,7 @@ It can only work for single project and single user.
     http_user.txt
     http_password.txt
     api_access_key.txt
+    project_uri.txt
     setup.xml
 
     see below to write and validate setup.xml
@@ -43,7 +44,7 @@ It can only work for single project and single user.
 
      You set subject and description as you like.
 
-     You set start_date and due_date in "date -d" format.
+     You set start_date and due_date in GNU date format.
      before you set, please check below to validate your parameter.
 
      $ date +%F -d "your-setup-parameter"

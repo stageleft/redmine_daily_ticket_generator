@@ -3,7 +3,8 @@
 USR=`cat http_user.txt`
 PWD=`cat http_passwd.txt`
 KEY=`cat api_access_key.txt`
-exec ruby -S -x "$0" "${USR}" "${PWD}" "${KEY}" "$@"
+URI=`cat project_uri.txt`
+exec ruby -S -x "$0" "${USR}" "${PWD}" "${KEY}" ${URI} "$@"
 
 #! ruby
 # -*- coding: utf-8 -*-
@@ -20,7 +21,7 @@ t = Daily_Ticket_Initiator.new
 t.username = ARGV[0]
 t.password = ARGV[1]
 t.api_key  = ARGV[2]
-t.pj_uri   = 'https://secure.ex.root-node.net/redmine/projects/takumim-project/'
+t.pj_uri   = ARGV[3]
 
 t.initiate_setup_list.write(:indent => 4)
 

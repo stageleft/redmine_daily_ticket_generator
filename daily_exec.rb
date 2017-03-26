@@ -3,10 +3,11 @@
 USR=`cat http_user.txt`
 PWD=`cat http_passwd.txt`
 KEY=`cat api_access_key.txt`
+URI=`cat project_uri.txt`
 
 logger -t $0 start.
 
-exec ruby -S -x "$0" "${USR}" "${PWD}" "${KEY}" "$@"
+exec ruby -S -x "$0" "${USR}" "${PWD}" "${KEY}" "${URI}" "$@"
 
 #! ruby
 # -*- coding: utf-8 -*-
@@ -17,7 +18,7 @@ t = Daily_Ticket_Generator.new
 t.username = ARGV[0]
 t.password = ARGV[1]
 t.api_key  = ARGV[2]
-t.pj_uri   = 'https://secure.ex.root-node.net/redmine/projects/takumim-project/'
+t.pj_uri   = ARGV[3]
 t.setup_file = 'setup.xml' 
 
 Syslog.open($0)

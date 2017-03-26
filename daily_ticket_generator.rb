@@ -31,7 +31,7 @@ class Daily_Ticket_Generator
   # get active issue list from Redmine project.
   #   get_issue_list -> nil | REXML::Document
   def get_issue_list
-    uri            = URI.parse(@pj_uri + 'issues.xml')
+    uri            = URI.parse(@pj_uri + '/issues.xml')
     uri.query      = URI.encode_www_form({ :limit => @limit.to_s })
     http           = Net::HTTP.new(uri.host, uri.port)
     if @pj_uri.index("https://") != nil then
@@ -110,7 +110,7 @@ class Daily_Ticket_Generator
 
   #   set_issue(REXML::Document issue) -> true | false
   def set_issue(issue)
-    uri            = URI.parse(@pj_uri + "issues.xml")
+    uri            = URI.parse(@pj_uri + "/issues.xml")
     http           = Net::HTTP.new(uri.host, uri.port)
     if @pj_uri.index("https://") != nil then
       http.use_ssl = true

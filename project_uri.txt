@@ -1,0 +1,1 @@
+https://your.redmine.project.host/redmine/projects/your.redmine.project.path
