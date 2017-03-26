@@ -23,8 +23,12 @@ It can only work for single project and single user.
 
  4. setup to execute automatically.
 
+  4-1. change daily_exec.rb to execute by cron.
+   change RUBYFILE=$(which ruby) to RUBYFILE=/your/path/to/ruby
+
+  4-2. register to cron.
    sample for "crontab -e" : check and set new ticket in 23:00
-    0 23 * * * pushd /your/dir/of/daily_ticket_generator ; ./daily_exec.rb ; popd
+    0 23 * * * /your/dir/of/daily_ticket_generator/daily_exec.rb
 
 # setup setup.xml
 
