@@ -41,7 +41,9 @@ class Daily_Ticket_Generator
     request = Net::HTTP::Get.new(uri.path + '?' + uri.query)
     request['Content-Type']      = "text/xml"
     request['X-Redmine-API-Key'] = @api_key
-    request.basic_auth(@username, @password)
+    if @username != nil and @password != nil then
+      request.basic_auth(@username, @password)
+    end
 
     begin
       response = http.request(request)
@@ -120,7 +122,9 @@ class Daily_Ticket_Generator
     request["Content-Type"]      = "text/xml"
     request["X-Redmine-API-Key"] = @api_key
     request.body                 = issue.to_s
-    request.basic_auth(@username, @password)
+    if @username != nil and @password != nil then
+      request.basic_auth(@username, @password)
+    end
 
     begin
       response = http.request(request)

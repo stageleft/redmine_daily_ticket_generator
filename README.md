@@ -13,13 +13,15 @@ It can only work for single project and single user.
 
  3. setup your setting in these files.
 
-    http_user.txt
-    http_password.txt
     api_access_key.txt
-    project_uri.txt
-    setup.xml
 
-    see below to write and validate setup.xml
+    project_uri.txt
+
+    setup.xml
+    ( see below to write and validate setup.xml )
+
+    basic_auth.txt
+    ( or delete basic_auth.txt if your Redmine don't have basic auth )
 
  4. setup to execute automatically.
 
@@ -44,7 +46,7 @@ It can only work for single project and single user.
 
   2. see setup.xml.sample and edit setup.xml
 
-     You need project id, author id and assgned_to id  from setup.xml.
+     You need project id, author id and assgned_to id from setup.xml.sample
 
      You set subject and description as you like.
 
@@ -62,7 +64,6 @@ It can only work for single project and single user.
   3. execute command below to validate parameter.
 
      $ ./validate_setup.rb > setup.xml.sample
-
 
 # about author
 
