@@ -11,25 +11,30 @@ It can only work for single project and single user.
 
  2. clone or export all files to any directory.
 
- 3. setup your setting in these files.
+ 3. setup your setting in these files. see sample dir.
 
     api_access_key.txt
 
     project_uri.txt
 
-    setup.xml
-    ( see below to write and validate setup.xml )
+    setup.xml ( see below to write and validate setup.xml )
 
-    basic_auth.txt
-    ( or delete basic_auth.txt if your Redmine don't have basic auth )
+    basic_auth.txt ( if your Redmine have basic auth )
 
  4. setup to execute automatically.
 
   4-1. change daily_exec.rb to execute by cron.
-   change RUBYFILE=$(which ruby) to RUBYFILE=/your/path/to/ruby
+
+   execute 
+
+   # sh ./update_daily_exec_rb.sh
+
+   to change RUBYFILE=$(which ruby) to RUBYFILE=/your/path/to/ruby
 
   4-2. register to cron.
+
    sample for "crontab -e" : check and set new ticket in 23:00
+
     0 23 * * * /your/dir/of/daily_ticket_generator/daily_exec.rb
 
 # setup setup.xml
